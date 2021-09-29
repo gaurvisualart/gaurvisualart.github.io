@@ -4,13 +4,7 @@
 
     
     <a-marker type="pattern" url="data/kanji.patt">
-        <a-camera>
-            <a-entity cursor position="0 0 -1"
-                      geometry="primitive: sphere; radius: 0.005"
-                      material="color: #000000; shader: flat; opacity: 0.5"></a-entity>
-            
-            </a-entity>
-        </a-camera>>
+
 
         <!-- Left Red Box -->
         <a-box color="#AA0000" position="-2 0 -7">
@@ -35,7 +29,13 @@
 
     </a-marker>
     
-    <a-entity camera></a-entity>
+    <a-camera>
+        <a-entity cursor position="0 0 -1"
+                  geometry="primitive: sphere; radius: 0.005"
+                  material="color: #000000; shader: flat; opacity: 0.5"></a-entity>
+        
+        </a-entity>
+    </a-camera>>
     
 </a-scene>
 </body>
