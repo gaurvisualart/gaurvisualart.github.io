@@ -1,49 +1,14 @@
-
-<!doctype HTML>
+<!doctype html>
 <html>
-<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<script src="js/aframe.min.js"></script>
-<script src="js/aframe-ar.js"></script>
-<body style="margin: 0px; overflow: hidden;">
-
-<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
-
-
-    
-    <a-marker type="pattern" url="data/pattern-marker.patt">
-        <a-camera>
-            <a-entity cursor position="0 0 -1"
-                      geometry="primitive: sphere; radius: 0.005"
-                      material="color: #000000; shader: flat; opacity: 0.5"></a-entity>
-            
-            </a-entity>
-        </a-camera>>
-
-        <!-- Left Red Box -->
-        <a-box color="#AA0000" position="-2 0 -7">
-        </a-box>
-        <!-- Green Box -->
-        <a-box id="green" color="#00AA00" position="-2 3 -7">
-        </a-box>
-
-        <!-- Center Red Box -->
-        <a-box color="#AA0000" position="0 0 -7">
-        </a-box>
-        <!-- Blue Box-->
-        <a-box id="blue" color="0000AA" position="0 3 -7">
-        </a-box>
-
-        <!-- Right Red Box -->
-        <a-box color="#AA0000" position="2 0 -7">
-        </a-box>
-        <!-- Tellow Box-->
-        <a-box id="yellow" color="0000AA" position="2 3 -7">
-        </a-box>
-
-    </a-marker>
-    
-    <a-entity camera></a-entity>
-    
-</a-scene>
+<head>
+  <meta charset="utf-8">
+  <title>MDN Games: A-Frame demo - cube</title>
+  <script src="js/aframe.min.js"></script>
+</head>
+<body>
+	<a-scene>
+		<a-sky color="#DDDDDD"></a-sky>
+		<a-cube color="#0095DD" position="0 1 0" rotation="20 40 0"></a-cube>
+	</a-scene>
 </body>
 </html>
