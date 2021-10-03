@@ -1,42 +1,46 @@
+<!doctype HTML>
+<html>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.js"></script>
+<body style="margin: 0px; overflow: hidden;">
+<!-- set detectionMode and matrixCodeType to enable barcode marker detection and custom pattern files -->
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
-<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+    <a-assets>
+        <img id="grid" src="images/border.png" />
+        <img id="earth-flat" src="images/earth-flat.jpg" />
+        <img id="earth-sphere" src="images/earth-sphere.jpg" />
+    </a-assets>
 
-
-    
-    <a-marker type="pattern" url="data/kanji.patt">
-
-
-        <!-- Left Red Box -->
-        <a-box color="#AA0000" position="-2 0 -7">
-        </a-box>
-        <!-- Green Box -->
-        <a-box id="green" color="#00AA00" position="-2 3 -7">
-        </a-box>
-
-        <!-- Center Red Box -->
-        <a-box color="#AA0000" position="0 0 -7">
-        </a-box>
-        <!-- Blue Box-->
-        <a-box id="blue" color="0000AA" position="0 3 -7">
-        </a-box>
-
-        <!-- Right Red Box -->
-        <a-box color="#AA0000" position="2 0 -7">
-        </a-box>
-        <!-- Tellow Box-->
-        <a-box id="yellow" color="0000AA" position="2 3 -7">
-        </a-box>
-
+    <a-marker type="pattern" url="data/pattern-marker.patt">
+            <a-box position="0 0.5 0"
+                material="color: red; transparent: true; opacity: 0.50;">
+            </a-box>
     </a-marker>
-    
-    <a-camera>
-        <a-entity cursor position="0 0 -1"
-                  geometry="primitive: sphere; radius: 0.005"
-                  material="color: #000000; shader: flat; opacity: 0.5"></a-entity>
-        
-        </a-entity>
-    </a-camera>>
-    
+
+    <a-marker type="barcode" value="0">
+        <a-box position="0 0.5 0"
+            material="src: #grid; color: yellow; transparent: true; opacity: 0.50;">
+        </a-box>
+    </a-marker>
+
+    <a-marker type="barcode" value="1">
+        <a-plane position="0 0 0"
+                 rotation="-90 0 0"
+                 material="src: #earth-flat;">
+        </a-plane>
+    </a-marker>
+
+    <a-marker type="barcode" value="2">
+        <a-sphere position="0 0.5 0"
+                 rotation="-90 0 0"
+                 material="src: #earth-sphere; transparent: true; opacity: 0.95;">
+        </a-sphere>
+    </a-marker>
+
+    <e-entity camera></e-entity>
+
 </a-scene>
 </body>
 </html>
