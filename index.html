@@ -10,15 +10,14 @@
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
     <a-assets>
-		<a-asset-item id="tree" src="models/tree.gltf"></a-asset-item>
+		<a-asset-item id="text" src="models/text_animation.gltf"></a-asset-item>
 	</a-assets>
     
     <a-marker type="pattern" url="data/pattern-marker.patt">
         <a-entity position="0 0 0"
                   rotation="0 0 0"
                   scale="0.10 0.10 0.10"
-                  gltf-model="#tree"
-                  animation__rotate = "property: rotation; dur: 8000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
+                  gltf-model="#text">
         </a-entity>
     </a-marker>
 
