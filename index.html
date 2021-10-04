@@ -10,14 +10,14 @@
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
     <a-assets>
-		<a-asset-item id="pirate" src="models/pirate.gltf"></a-asset-item>
+		<a-asset-item id="ship" src="models/ship.glb"></a-asset-item>
 	</a-assets>
     
     <a-marker type="pattern" url="data/pattern-marker.patt">
         <a-entity position="0 0 0"
                   rotation="0 0 0"
                   scale="0.02 0.02 0.02"
-                  gltf-model="#pirate">
+                  gltf-model="#ship">
         </a-entity>
     </a-marker>
 
