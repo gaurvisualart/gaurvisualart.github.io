@@ -1,29 +1,52 @@
 <!doctype HTML>
 <html>
-<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<script src="js/aframe.min.js"></script>
-<script src="js/aframe-ar.js"></script>
-<body style="margin: 0px; overflow: hidden;">
-  
-<!-- set detectionMode and matrixCodeType to enable barcode marker detection and custom pattern files -->
+<head>
+    <title>Gesture Interactions - A-Frame & AR.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
 
-<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="js/gesture-detector.js"></script>
+    <script src="js/gesture-handler.js"></script>
+</head>
 
-    <a-assets>
-		<a-asset-item id="ship" src="models/ship.gltf"></a-asset-item>
-	</a-assets>
-    
-    <a-marker type="pattern" url="data/pattern-marker.patt">
-        <a-entity position="0 0 0"
-                  rotation="0 0 0"
-                  scale="0.1 0.1 0.1"
-                  gltf-model="#ship">
-        </a-entity>
-    </a-marker>
+<body>
+    <a-scene
+        arjs 
+        embedded
+        renderer="logarithmicDepthBuffer: true;"   
+        vr-mode-ui="enabled: false"
+        gesture-detector
+        id="scene">
 
-    
-    <a-entity camera></a-entity>
-    
-</a-scene>
+        <a-assets>
+            <a-asset-item 
+                id="bowser"
+                src="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"
+            >
+            </a-asset-item>
+        </a-assets> 
+
+        <a-marker
+            preset="hiro"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse; rayOrigin: mouse;"
+            id="markerA"
+        >
+            <a-entity
+                id="bowser-model"
+                gltf-model="#bowser"
+                position="0 0 0"
+                scale="0.05 0.05 0.05"
+                class="clicakble"
+                gesture-handler
+            >
+            </a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
 </body>
 </html>
